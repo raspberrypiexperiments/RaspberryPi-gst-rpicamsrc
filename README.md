@@ -1,8 +1,10 @@
 # RaspberryPi-gst-rpicamsrc
 
-## Instllation procedure
+## Installation procedure
 
 ```bash
+git clone --recurse-submodules -j$(nproc) https://github.com/raspberrypiexperiments/RaspberryPi-gst-rpicamsrc.git
+cd RaspberryPi-gst-rpicamsrc
 sudo make install
 ```
 
