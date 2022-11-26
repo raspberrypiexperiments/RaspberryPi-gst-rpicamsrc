@@ -24,7 +24,7 @@
 dependencies:
 	sudo apt update
 	sudo apt upgrade -y
-	sudo apt install libgstreamer*-dev autoconf libtool -y
+	sudo apt install libgstreamer*-dev libgstrtspserver-1.0-dev python3-gst-1.0 autoconf libtool -y
 
 install: dependencies
 	wget https://raw.githubusercontent.com/raspberrypiexperiments/RaspberryPi-GStreamer-1.0/main/0006_RaspiCapture.c.patch -o gst-rpicamsrc/src/0006_RaspiCapture.c.patch
