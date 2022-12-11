@@ -27,13 +27,13 @@ dependencies:
 	sudo apt install libgstreamer*-dev libgstrtspserver-1.0-dev python3-gst-1.0 autoconf libtool -y
 
 install: dependencies
-	wget https://raw.githubusercontent.com/raspberrypiexperiments/RaspberryPi-GStreamer-1.0/main/0006_RaspiCapture.c.patch -o gst-rpicamsrc/src/0006_RaspiCapture.c.patch
-	wget https://raw.githubusercontent.com/raspberrypiexperiments/RaspberryPi-GStreamer-1.0/main/0007_gstrpicamsrc.c.patch -o gst-rpicamsrc/src/0007_gstrpicamsrc.c.patch
-	wget https://raw.githubusercontent.com/raspberrypiexperiments/RaspberryPi-GStreamer-1.0/main/0010_RaspiCapture.h.patch -o gst-rpicamsrc/src/0010_RaspiCapture.h.patch
+	wget https://raw.githubusercontent.com/raspberrypiexperiments/RaspberryPi-GStreamer-1.0/main/0006_RaspiCapture.c.patch -O gst-rpicamsrc/src/0006_RaspiCapture.c.patch
+	wget https://raw.githubusercontent.com/raspberrypiexperiments/RaspberryPi-GStreamer-1.0/main/0007_gstrpicamsrc.c.patch -O gst-rpicamsrc/src/0007_gstrpicamsrc.c.patch
+	wget https://raw.githubusercontent.com/raspberrypiexperiments/RaspberryPi-GStreamer-1.0/main/0010_RaspiCapture.h.patch -O gst-rpicamsrc/src/0010_RaspiCapture.h.patch
 	cd gst-rpicamsrc/src && if ! patch -R -p7 -s -f --dry-run < 0006_RaspiCapture.c.patch; then patch -p7 < 0006_RaspiCapture.c.patch; fi
 	cd gst-rpicamsrc/src && if ! patch -R -p7 -s -f --dry-run < 0007_gstrpicamsrc.c.patch; then patch -p7 < 0007_gstrpicamsrc.c.patch; fi
 	cd gst-rpicamsrc/src && if ! patch -R -p7 -s -f --dry-run < 0010_RaspiCapture.h.patch; then patch -p7 < 0010_RaspiCapture.h.patch; fi
-	cd gst-rpicamsrc && ./autogen.sh --prefix=/usr --libdir=/usr/lib/arm-linux-gnueabihf/ && make && sudo make install
+	cd gst-rpicamsrc && ./autogen.sh --prefix=/usr --libdir=/usr/lib/arm-linux-gnueabihf/ && make && sudo make install && sudo ldconfig
 
 uninstall:
 	cd gst-rpicamsrc && sudo make uninstall
