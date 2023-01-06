@@ -28,7 +28,7 @@ make install
 
 ## Uninstallation procedure
 
-Uninstallation procedure:
+Uninstallation:
 
 ```bash
 make uninstall
@@ -44,4 +44,4 @@ rm -rf RaspberryPi-gst-rpicamsrc
 
 MIT License
 
-Copyright (c) 2022 Marcin Sielski <marcin.sielski@gmail.com>
+Copyright (c) 2022-2023 Marcin Sielski <marcin.sielski@gmail.com>
