@@ -10,7 +10,7 @@ This repository provides enables to install GStreamer plugin for **rpicamsrc**.
 
 ## Known supported OS
 
-* Bullsye.
+* Bullseye.
 
 ## Installation
 
