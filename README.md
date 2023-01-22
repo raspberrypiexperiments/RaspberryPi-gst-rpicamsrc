@@ -2,11 +2,12 @@
 
 ## Overview
 
-This repository provides enables to install GStreamer plugin for **rpicamsrc**.
+This repository enables to install GStreamer plugin for **rpicamsrc**.
 
 ## Known supported Raspberry Pi
 
-* Raspberry Pi 3B.
+* Raspberry Pi 3B,
+* Raspberry Pi 3A+.
 
 ## Known supported OS
 
@@ -17,7 +18,8 @@ This repository provides enables to install GStreamer plugin for **rpicamsrc**.
 Installation procedure:
 
 ```bash
-git clone --recurse-submodules -j$(nproc) https://github.com/raspberrypiexperiments/RaspberryPi-gst-rpicamsrc.git
+git clone --recurse-submodules \
+    -j$(nproc) https://github.com/raspberrypiexperiments/RaspberryPi-gst-rpicamsrc.git
 ```
 ```bash
 cd RaspberryPi-gst-rpicamsrc
@@ -26,9 +28,9 @@ cd RaspberryPi-gst-rpicamsrc
 make install
 ```
 
-## Uninstallation procedure
+## Uninstallation
 
-Uninstallation:
+Uninstallation procedure:
 
 ```bash
 make uninstall
